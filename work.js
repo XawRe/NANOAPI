@@ -14,6 +14,8 @@ DEFAULT_REPRESENTATIVE='nano_1center16ci77qw5w69ww8sy4i4bfmgfhr81ydzpurm91cauj11
 const superagent = require('superagent');
 const NanoCurrency = require('nanocurrency');
 
+const CONFIG = require('./const.js');
+
 // const superagent = require('superagent');
 // const { megaToRaw, rawToMega } = require('nano-unit-converter');
 
@@ -288,7 +290,7 @@ const {
 } = require('worker_threads');
 
 async function main() {
-    const seed = '64599B1C7229368E91C1F091C3749A3738FB77A2B7EA888447D16920C571C067';
+    const seed = CONFIG.seed;
     
     const account = create_nano_account(seed, 0);
     
