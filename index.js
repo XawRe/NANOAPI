@@ -2,6 +2,8 @@ const app = require('express')();
 var Limiter = require('async-limiter');
 var t = new Limiter({ concurrency: 1 });
 
+const CONFIG = require('./const.js');
+
 const superagent = require('superagent');
 
 RPC_SERVER='https://rainstorm.city/api';
@@ -54,7 +56,7 @@ app.use((req, res, next) => {
 
 app.get('/balance', async (req, res) => {
     
-    let balls = await account_balance('nano_1pbkbcoqz1piii773g6tuwoyy6gyy7m6yiyqqzokf7yac9d369xcay36gabc');
+    let balls = await account_balance(CONFIG.account);
     let xno = rawToMega(balls.balance);
     let pending = balls.receivable > 0 ? rawToMega(balls.receivable) : 0;
     
@@ -103,6 +105,6 @@ app.post('/send', async (req, res) => {
     
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-    console.log('Online ', process.env.SERVER_PORT);
+app.listen(CONFIG.port, () => {
+    console.log('Online ', CONFIG.port);
 });
