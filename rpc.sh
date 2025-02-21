@@ -1,0 +1,1 @@
+curl -g -d '{"action":"send", "wallet": "0e8168f8-831e-457c-bdad-77f2ed6c903c", "source": "nano_1wzs54czh1usx1wt9aa5msxqynkfsh9b94fp9ici6pniqzftysiwniiaymi8", "destination": "nano_3rh9ckrgoo1mxebf5as7hqbpgpbfwk676dar3ty6ww5zug5hbgy5xxfyjtxg", "amount": "10000000000000000000000000", "id": "bttm2"}' localhost:11338

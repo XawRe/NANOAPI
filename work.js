@@ -5,11 +5,14 @@
 */
 
 // View other options of Public Nano Nodes: https://publicnodes.somenano.com
-RPC_SERVER='https://rainstorm.city/api';
-WORK_SERVER='https://rainstorm.city/api';
+// RPC_SERVER='https://rainstorm.city/api';
+// WORK_SERVER='https://rainstorm.city/api';
 REQUEST_TIMEOUT=60*1000;	// 10 seconds
-WORK_LOCAL=true;			// If false, work is requested from Nano Node
+WORK_LOCAL=false;			// If false, work is requested from Nano Node
 DEFAULT_REPRESENTATIVE='nano_1center16ci77qw5w69ww8sy4i4bfmgfhr81ydzpurm91cauj11jn6y3uc5y'; //NanoCenter
+
+RPC_SERVER='http://localhost:11338';
+WORK_SERVER='http://localhost:11338';
 
 const superagent = require('superagent');
 const NanoCurrency = require('nanocurrency');
